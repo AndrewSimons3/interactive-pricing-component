@@ -1,0 +1,70 @@
+@media screen and (min-width: 768px) {
+	.container {
+		width: 600px;
+
+		.content {
+			.dsk-wrapper {
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				margin-bottom: 3rem;
+			}
+
+			.content-title {
+				margin: 0;
+			}
+
+			.price-dsk-vw {
+				text-align: center;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				p {
+					font-size: 3.2rem;
+					font-weight: 800;
+				}
+
+				.per {
+					font-size: 1.5rem;
+					color: $text;
+				}
+			}
+			.price-mobile-vw {
+				display: none;
+			}
+
+			.slider {
+				margin-bottom: 5rem;
+			}
+
+			.billing {
+				.discount-container {
+					display: flex;
+					gap: 2px;
+					.minus {
+						display: none;
+					}
+					.discount {
+						display: block;
+					}
+				}
+			}
+
+			.desktop-wrapper {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0 4rem;
+
+        .footer {
+
+          ul {
+            align-items: flex-start;
+          }
+        }
+			}
+		}
+	}
+}

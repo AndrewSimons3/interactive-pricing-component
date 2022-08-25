@@ -28,7 +28,13 @@
 				<p>No credit card required.</p>
 			</header>
 			<section class="content">
-				<h2 class="content-title">100K Pageviews</h2>
+				<div class="dsk-wrapper">
+					<p class="content-title"><span id="pageView">100k</span> Pageviews</p>
+					<div class="price-dsk-vw">
+						<p>$<span id="cost">16</span>.00</p>
+						<span class="per">/ month</span>
+					</div>
+				</div>
 				<div class="slider">
 					<input
 						type="range"
@@ -39,8 +45,8 @@
 						value="2"
 					/>
 				</div>
-				<div class="price">
-					<span class="amount">$16.00</span>
+				<div class="price-mobile-vw">
+					<p>$<span id="cost">16</span>.00</p>
 					<span class="per">/ month</span>
 				</div>
 				<div class="billing">
@@ -50,34 +56,41 @@
 						<span class="toggle-slider"></span>
 					</label>
 					<p class="yearly">Yearly Billing</p>
-					<p class="discount">25% discount</p>
+					<p class="discount-container">
+						<span class="minus">-</span><span>25%</span
+						><span class="discount"> discount</span>
+					</p>
 				</div>
 				<hr />
-				<div class="footer">
-					<ul>
-						<li>
-							<img src="./images/icon-check.svg" alt="check" />Unlimited
-							websites
-						</li>
-						<li>
-							<img src="./images/icon-check.svg" alt="check" />100% data
-							ownership
-						</li>
-						<li>
-							<img src="./images/icon-check.svg" alt="check" />Email reports
-						</li>
-					</ul>
+				<div class="desktop-wrapper">
+					<div class="footer">
+						<ul>
+							<li>
+								<img src="./images/icon-check.svg" alt="check" />Unlimited
+								websites
+							</li>
+							<li>
+								<img src="./images/icon-check.svg" alt="check" />100% data
+								ownership
+							</li>
+							<li>
+								<img src="./images/icon-check.svg" alt="check" />Email reports
+							</li>
+						</ul>
+					</div>
+
+					<button class="btn">Start my trial</button>
 				</div>
-
-				<button class="btn">Start my trial</button>
 			</section>
-		</main>
 
-		<div class="attribution">
+      <div class="attribution">
 			Challenge by
 			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
 				>Frontend Mentor</a
-			>. Coded by <a href="#">Your Name Here</a>.
+			>. Coded by <a href="#">Andrew Simons</a>.
 		</div>
+		</main>
+
+		
 	</body>
 </html>

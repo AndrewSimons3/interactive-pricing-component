@@ -1,9 +1,8 @@
 .container {
-  background-image: url(../images/bg-pattern.svg);
-  background-repeat: no-repeat;
   text-align: center;
   height: 100vh;
   padding: 4rem 2rem;
+  width: 360px;
 }
 .container .header {
   background-image: url(../images/pattern-circles.svg);
@@ -17,10 +16,6 @@
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
-.container .header .header img {
-  width: 100%;
-  height: 100%;
-}
 .container .header .title {
   margin-bottom: 0.5rem;
 }
@@ -31,20 +26,22 @@
 .container .content {
   background-color: #ffffff;
   border-radius: 1.2rem;
-  padding: 3rem 1rem;
+  padding: 3rem 0rem;
+  margin-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 .container .content .content-title {
   color: hsl(225deg, 20%, 60%);
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: 1.5px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .container .content .slider {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 .container .content .slider #price-slider {
-  width: 100%;
+  width: 85%;
   -webkit-appearance: none;
   height: 1rem;
   border-radius: 5px;
@@ -64,17 +61,23 @@
 .container .content .slider #price-slider::-webkit-slider-thumb:hover {
   background-color: hsl(174deg, 77%, 80%);
 }
-.container .content .price {
+.container .content .price-mobile-vw {
   text-align: center;
   margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.container .content .price .amount {
+.container .content .price-mobile-vw p {
   font-size: 3.2rem;
   font-weight: 800;
 }
-.container .content .price .per {
+.container .content .price-mobile-vw .per {
   font-size: 1.5rem;
   color: hsl(225deg, 20%, 60%);
+}
+.container .content .price-dsk-vw {
+  display: none;
 }
 .container .content .billing {
   padding-bottom: 3rem;
@@ -86,20 +89,72 @@
   align-items: center;
   gap: 1rem;
 }
-.container .content .footer {
+.container .content .billing p {
+  font-size: 1.2rem;
+  color: hsl(225deg, 20%, 60%);
+}
+.container .content .billing .discount-container {
+  padding: 0.25rem 1rem;
+  background-color: hsl(14deg, 92%, 95%);
+  color: hsl(15deg, 100%, 70%);
+  border-radius: 25px;
+}
+.container .content .billing .discount-container .discount {
+  display: none;
+}
+.container .content .billing .switch input {
+  opacity: 0;
+}
+.container .content .billing .switch {
+  display: inline-block;
+  width: 3.75rem;
+  height: 2rem;
+  position: relative;
+}
+.container .content .billing .toggle-slider {
+  position: absolute;
+  background-color: hsl(223deg, 50%, 87%);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 2.5rem;
+  transition: all 0.4s ease-in-out;
+}
+.container .content .billing .toggle-slider:hover {
+  background-color: hsl(174deg, 86%, 45%);
+}
+.container .content .billing .toggle-slider::before {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 50%;
+  left: 3px;
+  top: 3px;
+  transition: all 0.4s ease-in-out;
+}
+.container .content .billing .switch input:checked + .toggle-slider:before {
+  transform: translateX(18px);
+}
+.container .content hr {
+  border: none;
+}
+.container .content .footer ul {
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 3rem;
 }
-.container .content .footer li {
+.container .content .footer ul li {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: hsl(225deg, 20%, 60%);
   font-weight: 600;
 }
@@ -126,8 +181,67 @@ html {
 body {
   font-family: "Manrope", sans-serif;
   min-height: 100vh;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  background-image: url(../images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 600px;
+  }
+  .container .content .dsk-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+  }
+  .container .content .content-title {
+    margin: 0;
+  }
+  .container .content .price-dsk-vw {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .content .price-dsk-vw p {
+    font-size: 3.2rem;
+    font-weight: 800;
+  }
+  .container .content .price-dsk-vw .per {
+    font-size: 1.5rem;
+    color: hsl(225deg, 20%, 60%);
+  }
+  .container .content .price-mobile-vw {
+    display: none;
+  }
+  .container .content .slider {
+    margin-bottom: 5rem;
+  }
+  .container .content .billing .discount-container {
+    display: flex;
+    gap: 2px;
+  }
+  .container .content .billing .discount-container .minus {
+    display: none;
+  }
+  .container .content .billing .discount-container .discount {
+    display: block;
+  }
+  .container .content .desktop-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+  }
+  .container .content .desktop-wrapper .footer ul {
+    align-items: flex-start;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */

@@ -1,11 +1,11 @@
 @import './variables';
 
 .container {
-	background-image: url(../images/bg-pattern.svg);
-	background-repeat: no-repeat;
 	text-align: center;
 	height: 100vh;
 	padding: 4rem 2rem;
+	width: 360px;
+  
 
 	.header {
 		background-image: url(../images/pattern-circles.svg);
@@ -19,10 +19,6 @@
 		gap: 0.5rem;
 		margin-bottom: 2rem;
 
-		.header img {
-			width: 100%;
-			height: 100%;
-		}
 
 		.title {
 			margin-bottom: 0.5rem;
@@ -37,21 +33,23 @@
 	.content {
 		background-color: $pricing-component-bg;
 		border-radius: 1.2rem;
-		padding: 3rem 1rem;
+		padding: 3rem 0rem;
+    margin-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
 		.content-title {
 			color: $text;
 			text-transform: uppercase;
 			font-size: 1.5rem;
 			letter-spacing: 1.5px;
-			margin-bottom: 2rem;
+			margin-bottom: 3rem;
 		}
 
 		.slider {
-			margin-bottom: 2rem;
+			margin-bottom: 3rem;
 
 			#price-slider {
-				width: 100%;
+				width: 85%;
 				-webkit-appearance: none;
 				height: 1rem;
 				border-radius: 5px;
@@ -79,36 +77,105 @@
 					background-color: $full-slide-bar;
 				}
 			}
-
-		
 		}
 
-    .price {
-				text-align: center;
-				margin-bottom: 3rem;
-				.amount {
-					font-size: 3.2rem;
-					font-weight: 800;
-				}
+		.price-mobile-vw {
+			text-align: center;
+			margin-bottom: 3rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
-				.per {
-					font-size: 1.5rem;
-					color: $text;
-				}
+			p {
+				font-size: 3.2rem;
+				font-weight: 800;
 			}
 
-			.billing {
-				padding-bottom: 3rem;
-				border-bottom: 1px solid hsl(240, 2%, 92%);
-        text-align: center;
-        display: inline;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
+			.per {
+				font-size: 1.5rem;
+				color: $text;
+			}
+		}
+
+    .price-dsk-vw {
+      display: none;
+    }
+
+		.billing {
+			padding-bottom: 3rem;
+			border-bottom: 1px solid hsl(240, 2%, 92%);
+			text-align: center;
+			display: inline;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+
+			p {
+				font-size: 1.2rem;
+				color: $text;
 			}
 
-			.footer {
+			.discount-container {
+				padding: 0.25rem 1rem;
+				background-color: $discount-background;
+				color: $discount-text;
+				border-radius: 25px;
+
+         .discount {
+            display: none;
+          }
+			}
+
+			.switch input {
+				opacity: 0;
+			}
+
+			.switch {
+				display: inline-block;
+				width: 3.75rem;
+				height: 2rem;
+				position: relative;
+			}
+
+			.toggle-slider {
+				position: absolute;
+				background-color: $toggle-bg;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				border-radius: 2.5rem;
+				transition: all 0.4s ease-in-out;
+			}
+
+			.toggle-slider:hover {
+				background-color: $slider-background;
+			}
+
+			.toggle-slider::before {
+				content: '';
+				position: absolute;
+				background-color: #fff;
+				height: 1.4rem;
+				width: 1.4rem;
+				border-radius: 50%;
+				left: 3px;
+				top: 3px;
+				transition: all 0.4s ease-in-out;
+			}
+
+			.switch input:checked + .toggle-slider:before {
+				transform: translateX(18px);
+			}
+		}
+
+		hr {
+			border: none;
+		}
+
+		.footer {
+			ul {
 				margin-top: 3rem;
 				display: flex;
 				flex-direction: column;
@@ -121,22 +188,21 @@
 					justify-content: center;
 					gap: 1rem;
 					align-items: center;
-					font-size: 1.5rem;
+					font-size: 1.2rem;
 					color: $text;
 					font-weight: 600;
 				}
 			}
+		}
 
-      	
-
-			.btn {
-				border: none;
-				border-radius: 25px;
-				padding: 1.75rem 5rem;
-				background-color: $text-and-cta-bg;
-				color: $CTA-text;
-				font-weight: 800;
-				font-size: 1.5rem;
-			}
+		.btn {
+			border: none;
+			border-radius: 25px;
+			padding: 1.75rem 5rem;
+			background-color: $text-and-cta-bg;
+			color: $CTA-text;
+			font-weight: 800;
+			font-size: 1.5rem;
+		}
 	}
 }
